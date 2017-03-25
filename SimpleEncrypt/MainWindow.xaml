@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleEncrypt"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="SimpleEncrypt" Width="400" Height="364" ResizeMode="NoResize" FontFamily="Calibri">
+    <StackPanel>
+        <TextBlock x:Name="enc_textBox" Height="23" Margin="20,20,20,0" FontSize="16" Text="Choose file/files to Encrypt:"/>
+        <StackPanel Margin="30,10,20,0" Orientation="Horizontal">
+            <Label x:Name="pass_label" Content="Choose a password:"/>
+            <TextBox Margin="10,0,30,0" Width="156"/>
+        </StackPanel>
+        <CheckBox x:Name="enc_save_checkBox" Content="Save the password to the Desktop" HorizontalAlignment="Left" Width="442" Margin="30,10,0,0"/>
+        <Button x:Name="enc_button" Content="Encrypt" Margin="50,20,50,0"/>
+
+        <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="0,30,0,30" />
+
+        <TextBlock x:Name="dec_textBox" Height="23" Margin="20,0,20,0" FontSize="16" Text="Choose file/files to Decrypt:"/>
+        <StackPanel Margin="30,10,20,0" Orientation="Horizontal">
+            <Label x:Name="dec_label" Content="Enter the password:"/>
+            <TextBox Margin="10,0,30,0" Width="156"/>
+        </StackPanel>
+        <Button x:Name="dec_button" Content="Decrypt" Margin="50,20,50,0"/>
+
+    </StackPanel>
+
+
 </Window>

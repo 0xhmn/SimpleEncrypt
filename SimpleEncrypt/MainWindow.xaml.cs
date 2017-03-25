@@ -1,17 +1,17 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 
 namespace SimpleEncrypt
 {
-    /// <summary>
-    /// todo:
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
-            Console.WriteLine("this is test");
             InitializeComponent();
+        }
+
+        private void encrypt_button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
