@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Security.Cryptography;
+using System.Windows;
 
 namespace SimpleEncrypt
 {
@@ -59,14 +61,20 @@ namespace SimpleEncrypt
 
                     AES.Mode = CipherMode.CBC;
 
-                    using (var cs = new CryptoStream(ms, AES.CreateDecryptor(), CryptoStreamMode.Write))
+                    CryptoStream cs;
+                    try
                     {
+                        cs = new CryptoStream(ms, AES.CreateDecryptor(), CryptoStreamMode.Write);
                         cs.Write(bytesToBeDecrypted, 0, bytesToBeDecrypted.Length);
                         cs.Close();
                     }
+                    catch (Exception e)
+                    {
+                        // wrong password
+                        MessageBox.Show("Incorrect password?", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Warning);
+                        return null;
+                    }
                     decryptedBytes = ms.ToArray();
-
-
                 }
             }
 

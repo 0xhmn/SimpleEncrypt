@@ -98,7 +98,11 @@ namespace SimpleEncrypt
 
             foreach (var file in FileNames)
             {
-                Decryption.DecryptFile(file, Password);
+                if (!Decryption.DecryptFile(file, Password))
+                {
+                    // faild to decrypt
+                    return;
+                }
             }
 
             MessageBox.Show($"{FileNames.Length} files decrypted!", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
