@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleEncrypt"
-        mc:Ignorable="d" Width="400" Height="344" ResizeMode="NoResize" FontFamily="Calibri" Icon="se.png">
+        mc:Ignorable="d" Width="400" Height="361.333" ResizeMode="NoResize" FontFamily="Calibri" Icon="se.png">
     <StackPanel>
         <TextBlock x:Name="enc_textBox" Height="23" Margin="20,20,20,0" FontSize="16" Text="Choose File/Files to Encrypt:"/>
         <DockPanel Margin="30,10,20,5">
