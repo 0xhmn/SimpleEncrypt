@@ -4,28 +4,28 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleEncrypt"
-        mc:Ignorable="d" Width="400" Height="361.333" ResizeMode="NoResize" FontFamily="Calibri" Icon="se.png">
+        mc:Ignorable="d" Width="400" Height="361.333" ResizeMode="NoResize" FontFamily="Calibri" Icon="icon.ico" Title="SimpleEncrypt">
     <StackPanel>
-        <TextBlock x:Name="enc_textBox" Height="23" Margin="20,20,20,0" FontSize="16" Text="Choose File/Files to Encrypt:"/>
+        <TextBlock x:Name="enc_textBox" Height="23" Margin="20,20,20,0" FontSize="16" Text="Choose File(s) to Encrypt:"/>
         <DockPanel Margin="30,10,20,5">
             <Label x:Name="pass_label" Content="Choose a password:"/>
             <TextBox x:Name="enc_password" Width="180" HorizontalAlignment="Right" VerticalContentAlignment="Center"/>
         </DockPanel>
         <CheckBox x:Name="enc_save_checkBox" Content="Save the password to the Desktop" HorizontalAlignment="Left" Width="314" Margin="30,10,0,0"/>
         <DockPanel  Margin="30,15,20,0">
-            <Button x:Name="enc_choose_file_button" Content="Choose Files" Click="enc_choose_file_button_Click" HorizontalAlignment="Left" Width="110"/>
+            <Button x:Name="enc_choose_file_button" Content="Choose File(s)" Click="enc_choose_file_button_Click" HorizontalAlignment="Left" Width="110"/>
             <Button x:Name="enc_button" Content="Encrypt"  Width="180" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Center" Click="enc_button_Click"/>
         </DockPanel>
 
         <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="0,30,0,30" />
 
-        <TextBlock x:Name="dec_textBox" Height="23" Margin="20,0,20,0" FontSize="16" Text="Choose File/Files to Decrypt:"/>
+        <TextBlock x:Name="dec_textBox" Height="23" Margin="20,0,20,0" FontSize="16" Text="Choose File(s) to Decrypt:"/>
         <DockPanel Margin="30,10,20,0">
             <Label x:Name="dec_label" Content="Enter the password:"/>
             <TextBox x:Name="dec_password" Width="180" VerticalContentAlignment="Center" HorizontalAlignment="Right"/>
         </DockPanel>
         <DockPanel  Margin="30,15,20,0">
-            <Button x:Name="dec_choose_file_button" Content="Choose Files" HorizontalAlignment="Left" Width="110" Click="dec_choose_file_button_Click"/>
+            <Button x:Name="dec_choose_file_button" Content="Choose File(s)" HorizontalAlignment="Left" Width="110" Click="dec_choose_file_button_Click"/>
             <Button x:Name="dec_button" Content="Decrypt" Width="180" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Center" Click="dec_button_Click"/>
         </DockPanel>
 
