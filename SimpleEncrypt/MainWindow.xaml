@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SimpleEncrypt"
         mc:Ignorable="d"
-        Title="SimpleEncrypt" Width="400" Height="364" ResizeMode="NoResize" FontFamily="Calibri">
+        Title="SimpleEncrypt" Width="400" Height="344" ResizeMode="NoResize" FontFamily="Calibri" Icon="se.png">
     <StackPanel>
         <TextBlock x:Name="enc_textBox" Height="23" Margin="20,20,20,0" FontSize="16" Text="Choose file/files to Encrypt:"/>
         <StackPanel Margin="30,10,20,0" Orientation="Horizontal">
