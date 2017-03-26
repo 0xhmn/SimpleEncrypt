@@ -21,7 +21,8 @@ namespace SimpleEncrypt
             // just Encypting Image files
             dialog.Multiselect = true;
             dialog.DefaultExt = ".jpg";
-            dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *.gif) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png; *.gif";
+            //dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *.gif) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png; *.gif";
+            dialog.Filter = "All files (*.*) | *.*";
 
             bool? result = dialog.ShowDialog();
             if (result.HasValue && result.Value)
