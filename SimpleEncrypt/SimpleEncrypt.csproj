@@ -55,6 +55,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AESClass.cs" />
+    <Compile Include="Decryption.cs" />
+    <Compile Include="Encryption.cs" />
     <Compile Include="RSAClass.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
