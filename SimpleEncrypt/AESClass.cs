@@ -38,6 +38,15 @@ namespace SimpleEncrypt
             return encryptedBytes;
         }
 
+
+        // AES Encryption using Filestream
+        public static byte[] AES_Encryption_FS(byte[] byteToBeEncrypted, byte[] passwordByte)
+        {
+            byte[] encryptedBytes = null;
+            byte[] saltBytes = { 1, 2, 3, 4, 5, 6, 7, 8 };
+            return null;
+        }
+
         // AES Decryption
         public static byte[] AES_Decrypt(byte[] bytesToBeDecrypted, byte[] passwordBytes)
         {
