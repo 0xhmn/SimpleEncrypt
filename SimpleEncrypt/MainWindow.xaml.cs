@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 
 namespace SimpleEncrypt
@@ -22,7 +23,7 @@ namespace SimpleEncrypt
             dialog.DefaultExt = ".jpg";
             dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *.gif) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png; *.gif";
 
-            Nullable<bool> result = dialog.ShowDialog();
+            bool? result = dialog.ShowDialog();
             if (result.HasValue && result.Value)
             {
                 FileNames = dialog.FileNames;
@@ -39,8 +40,8 @@ namespace SimpleEncrypt
 
             // set the password
             // default password is 'password'
-            var encPassword = enc_password.Text;
-            if (string.IsNullOrEmpty(encPassword))
+            Password = enc_password.Text;
+            if (string.IsNullOrEmpty(Password))
             {
                 Password = "password";
             }
@@ -50,8 +51,20 @@ namespace SimpleEncrypt
                 Encryption.EncryptFile(file, Password);
             }
 
+            if (enc_save_checkBox.IsChecked != null && enc_save_checkBox.IsChecked.Value)
+            {
+                var desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                var fullFileName = Path.Combine(desktopFolder, "Password.txt");
+                using (var tw = new StreamWriter(fullFileName, true))
+                {
+                    tw.WriteLine("password: " + Password);
+                    tw.Close();
+                }
+            }
+
             MessageBox.Show($"{FileNames.Length} files encrypted!", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             FileNames = null;
+            Password = null;
         }
 
         private void dec_choose_file_button_Click(object sender, RoutedEventArgs e)
@@ -76,8 +89,8 @@ namespace SimpleEncrypt
                 return;
             }
 
-            var decPassword = dec_password.Text;
-            if (string.IsNullOrEmpty(decPassword))
+            Password = dec_password.Text;
+            if (string.IsNullOrEmpty(Password))
             {
                 MessageBox.Show("You need to enter the password. The default password is 'password'.", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 return;
@@ -85,11 +98,12 @@ namespace SimpleEncrypt
 
             foreach (var file in FileNames)
             {
-                Decryption.DecryptFile(file, decPassword);
+                Decryption.DecryptFile(file, Password);
             }
 
             MessageBox.Show($"{FileNames.Length} files decrypted!", "Confirmation", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             FileNames = null;
+            Password = null;
         }
     }
 }

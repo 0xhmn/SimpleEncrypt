@@ -12,7 +12,7 @@
             <Label x:Name="pass_label" Content="Choose a password:"/>
             <TextBox x:Name="enc_password" Margin="10,0,30,0" Width="156"/>
         </StackPanel>
-        <CheckBox x:Name="enc_save_checkBox" Content="Save the password to the Desktop" HorizontalAlignment="Left" Width="442" Margin="30,10,0,0"/>
+        <CheckBox x:Name="enc_save_checkBox" Content="Save the password to the Desktop" HorizontalAlignment="Left" Width="314" Margin="30,10,0,0"/>
         <DockPanel  Margin="30,10,50,0">
             <Button x:Name="enc_choose_file_button" Content="Choose Files" Click="enc_choose_file_button_Click" HorizontalAlignment="Left" Width="100"/>
             <Button x:Name="enc_button" Content="Encrypt"  Width="197" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalContentAlignment="Center" Click="enc_button_Click"/>
